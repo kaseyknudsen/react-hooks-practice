@@ -14,14 +14,17 @@ const pages = [
   {
     name: "Use Ref Example 1",
     link: "useRef1",
+    tooltip: "focus and input",
   },
   {
     name: "Use Ref Example 2",
     link: "useRef2",
+    tooltip: "How many times has the component rendered",
   },
   {
     name: "Use Ref Example 3",
     link: "useRef3",
+    tooltip: "Random counter and perstisting values",
   },
 ];
 
@@ -34,13 +37,15 @@ function NavBar() {
 
           <Box sx={{ flexGrow: 1 }}>
             {pages.map((page) => (
-              <Button
-                key={page.link}
-                sx={{ my: 2, color: "white" }}
-                href={"/" + page.link}
-              >
-                {page.name}
-              </Button>
+              <Tooltip title={page.tooltip} placement="bottom">
+                <Button
+                  key={page.link}
+                  sx={{ my: 2, color: "white" }}
+                  href={"/" + page.link}
+                >
+                  {page.name}
+                </Button>
+              </Tooltip>
             ))}
           </Box>
         </Toolbar>
