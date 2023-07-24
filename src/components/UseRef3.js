@@ -30,11 +30,18 @@ const UseRef3 = () => {
         onChange={(e) => setName(e.target.value)}
       ></input>
       <button onClick={clearNameInput}>Reset</button>
-      <div style={{ marginTop: "20px" }}>{counter}</div>
-      <button onClick={() => setCounter(randomNum)} style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: "20px" }}>Counter: {counter}</div>
+      <button
+        onClick={() => setCounter(randomNum)}
+        style={{ marginTop: "20px" }}
+      >
         Click to update counter
       </button>
-      <div style={{ marginTop: "20px" }}>Previous Number: {prevNum.current}</div>
+      {typeof prevNum.current !== "undefined" && (
+        <div style={{ marginTop: "20px" }}>
+          Previous Counter: {prevNum.current}
+        </div>
+      )}
     </div>
   );
 };
