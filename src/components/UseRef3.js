@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import { Button, Typography } from "@mui/material";
 const UseRef3 = () => {
   const [name, setName] = useState("");
   const [counter, setCounter] = useState(0);
@@ -22,26 +23,25 @@ const UseRef3 = () => {
   }, [counter]);
 
   return (
-    <div style={{ marginTop: "50px" }}>
-      <input
-        type="text"
-        ref={inputRef}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      ></input>
-      <button onClick={clearNameInput}>Reset</button>
-      <div style={{ marginTop: "20px" }}>Counter: {counter}</div>
-      <button
-        onClick={() => setCounter(randomNum)}
-        style={{ marginTop: "20px" }}
-      >
-        Click to update counter
-      </button>
-      {typeof prevNum.current !== "undefined" && (
-        <div style={{ marginTop: "20px" }}>
-          Previous Counter: {prevNum.current}
-        </div>
-      )}
+    <div className="layout">
+      <Typography variant="h5">
+        <input
+          type="text"
+          ref={inputRef}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        ></input>
+        <Button variant="outlined" onClick={clearNameInput}>
+          Reset
+        </Button>
+        <div>Counter: {counter}</div>
+        <Button onClick={() => setCounter(randomNum)} variant="outlined">
+          Click to update counter
+        </Button>
+        {typeof prevNum.current !== "undefined" && (
+          <div>Previous Counter: {prevNum.current}</div>
+        )}
+      </Typography>
     </div>
   );
 };
