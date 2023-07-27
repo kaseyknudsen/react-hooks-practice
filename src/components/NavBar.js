@@ -26,6 +26,11 @@ const pages = [
     link: "useRef3",
     tooltip: "Random counter and perstisting values",
   },
+  {
+    name: "Use Effect Example",
+    link: "useEffect",
+    tooltip: "Example of UseEffect Hook",
+  },
 ];
 
 function NavBar() {
