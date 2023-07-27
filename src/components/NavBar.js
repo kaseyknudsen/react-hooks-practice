@@ -41,13 +41,9 @@ function NavBar() {
           <Box sx={{ flexGrow: 1 }}></Box>
 
           <Box sx={{ flexGrow: 1 }}>
-            {pages.map((page) => (
-              <Tooltip title={page.tooltip} placement="bottom">
-                <Button
-                  key={page.link}
-                  sx={{ my: 2, color: "white" }}
-                  href={"/" + page.link}
-                >
+            {pages.map((page, key) => (
+              <Tooltip title={page.tooltip} placement="bottom" key={page.link}>
+                <Button sx={{ my: 2, color: "white" }} href={"/" + page.link}>
                   {page.name}
                 </Button>
               </Tooltip>

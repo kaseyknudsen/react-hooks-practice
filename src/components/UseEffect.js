@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const UseEffect = () => {
     const [resourceType, setResourceType] = useState('posts')
-    
+    useEffect(() => {
+        console.log('render')
+    })
   return (
     
     <>

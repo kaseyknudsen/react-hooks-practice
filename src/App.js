@@ -3,7 +3,7 @@ import UseRef from "./components/UseRef";
 import UseRef2 from "./components/UseRef2";
 import UseRef3 from "./components/UseRef3";
 import UseEffect from "./components/UseEffect";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
