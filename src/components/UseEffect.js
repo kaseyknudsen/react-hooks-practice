@@ -8,6 +8,10 @@ const UseEffect = () => {
 
   useEffect(() => {
     console.log("resource type changed");
+
+    return () => {
+      console.log("return from resource changed");
+    };
   }, [resourceType]);
 
   useEffect(() => {
