@@ -14,7 +14,7 @@ const UseEffect = () => {
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((response) => response.json())
       //   .then((json) => console.log(json));
-      .then((json) => setItems(json));
+      .then((res) => setItems(res));
   }, [resourceType]);
   return (
     <>
@@ -24,10 +24,14 @@ const UseEffect = () => {
         <button onClick={() => setResourceType("comments")}>Comments</button>
       </div>
       <h1>{resourceType}</h1>
-      {items.map((item) => {
+      {items.map((item, key) => {
         return (
-            <pre>{JSON.stringify(item)}</pre>
-        )
+          <>
+            <h1>{key + 1}</h1>
+            <pre>{JSON.stringify(item.title)}</pre>
+            <pre>{item.title}</pre>
+          </>
+        );
       })}
     </>
   );
