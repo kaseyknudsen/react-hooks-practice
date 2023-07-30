@@ -31,6 +31,11 @@ const pages = [
     link: "useEffect",
     tooltip: "Example of UseEffect Hook",
   },
+  {
+    name: "Use Effect Example 2",
+    link: "useEffect2",
+    tooltip: "Example of UseEffect Hook",
+  },
 ];
 
 function NavBar() {
