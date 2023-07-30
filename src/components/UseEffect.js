@@ -3,19 +3,24 @@ import React, { useState, useEffect } from "react";
 const UseEffect = () => {
   const [resourceType, setResourceType] = useState("posts");
   const [items, setItems] = useState([]);
+
   console.log("I will run every time");
+
   useEffect(() => {
     console.log("resource type changed");
   }, [resourceType]);
+
   useEffect(() => {
     console.log("on mount");
   }, []);
+
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((response) => response.json())
       //   .then((json) => console.log(json));
       .then((res) => setItems(res));
   }, [resourceType]);
+
   return (
     <>
       <div>
@@ -28,8 +33,9 @@ const UseEffect = () => {
         return (
           <>
             <h1>{key + 1}</h1>
-            <pre>{JSON.stringify(item.title)}</pre>
-            <pre>{item.title}</pre>
+            <pre>JSON Post: {JSON.stringify(item.title)}</pre>
+            <pre>Not JSON Post: {item.title}</pre>
+            <pre>Body: {item.body}</pre>
           </>
         );
       })}
