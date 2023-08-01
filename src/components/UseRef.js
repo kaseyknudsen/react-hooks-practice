@@ -9,32 +9,51 @@ const UseRef = () => {
   const focus = () => {
     inputEl.current.focus();
   };
+  const clearField = () => {
+    setName("");
+  };
 
   //to store previous value
   useEffect(() => {
     prevName.current = name;
+    console.log(prevName.current)
   }, [name]);
 
   return (
     <Grid>
       <div className="layout">
-       
         <Typography variant="h5">
+          {/* focus doesn't matter since i'm using material UI */}
           <TextField
             ref={inputEl}
             value={name}
             onChange={(e) => setName(e.target.value)}
+            sx={{ marginBottom: "1em" }}
           ></TextField>
+          <div>
+            <Button
+              variant="outlined"
+              onClick={clearField}
+              sx={{ marginBottom: "2em", marginLeft: "5px" }}
+            >
+              Clear Name
+            </Button>
+          </div>
           {/* <input value={name} onChange={(e) => setName(e.target.value)}></input> */}
 
-          <div>my name is {name}</div>
+          <div style={{ marginBottom: "1em" }}>My name is {name}</div>
 
-          <Button variant="outlined" onClick={focus}>
+          <Button
+            variant="outlined"
+            onClick={focus}
+            sx={{ marginBottom: "2em" }}
+          >
             Focus
           </Button>
+
           <div>
-            My name is <span style={{ color: "red" }}>{name}</span> and it used
-            to be <span style={{ color: "blue" }}>{prevName.current}</span>
+            ...and it used to be...{" "}
+            <span style={{ color: "blue" }}>{prevName.current}</span>
           </div>
         </Typography>
       </div>

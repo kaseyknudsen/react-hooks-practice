@@ -28,9 +28,15 @@ const UseEffect = () => {
   return (
     <>
       <div>
-        <button onClick={() => setResourceType("posts")}>Posts</button>
-        <button onClick={() => setResourceType("users")}>Users</button>
-        <button onClick={() => setResourceType("comments")}>Comments</button>
+        <button  onClick={() => setResourceType("posts")}>
+          Posts
+        </button>
+        <button className="button" onClick={() => setResourceType("users")}>
+          Users
+        </button>
+        <button className="button" onClick={() => setResourceType("comments")}>
+          Comments
+        </button>
       </div>
       <h1>{resourceType}</h1>
       {items.map((item, key) => {

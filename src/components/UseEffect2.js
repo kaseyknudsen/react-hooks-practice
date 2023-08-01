@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Button } from "@mui/material";
 
 const UseEffect2 = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -31,7 +32,19 @@ const UseEffect2 = () => {
 
   return (
     <>
-      <div>{windowWidth}</div>
+      <h1>This Page Updates to a Random Color Every Time it Loads</h1>
+      <h3 style={{ marginTop: "15%" }}>It Will Also Change Color if You Click this Button:</h3>
+
+      <div>
+        <Button
+          variant="outlined"
+          sx={{ marginTop: ".5em", backgroundColor: "white" }}
+          onClick={() => setBackGroundColor(getRandomColor)}
+        >
+          Update Color
+        </Button>
+      </div>
+      <div style={{ marginTop: "30%" }}>{`Window Width: ${windowWidth}`}</div>
     </>
   );
 };
